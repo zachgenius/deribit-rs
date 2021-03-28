@@ -1,1 +1,138 @@
 # deribit-rs
+
+This is a [deribit](https://www.deribit.com) api(v2) library implemented with Rustlang. Currently, it supports JSON-RPC 
+over WebSockets. This project aims to support all three request methods (JSON-RPC over WebSockets, JSON-RPC over HTTPS 
+and FIX).
+
+## Development Plan
+- Authentication
+    - [ ] /public/auth
+    - [ ] /public/exchange_token
+    - [ ] /public/fork_token
+    - [ ] /private/logout
+- Session Management
+    - [ ] /public/set_heartbeat
+    - [ ] /public/disable_heartbeat
+    - [ ] /private/enable_cancel_on_disconnect
+    - [ ] /private/disable_cancel_on_disconnect
+    - [ ] /private/get_cancel_on_disconnect
+- Supporting
+    - [ ] /public/get_time
+    - [ ] /public/hello
+    - [ ] /public/test
+- Subscription Management
+    - [ ] /public/subscribe
+    - [ ] /public/unsubscribe
+    - [ ] /private/subscribe
+    - [ ] /private/unsubscribe
+- Account Management
+    - [ ] /public/get_announcements
+    - [ ] /private/change_api_key_name
+    - [ ] /private/change_scope_in_api_key
+    - [ ] /private/change_subaccount_name
+    - [ ] /private/create_api_key
+    - [ ] /private/create_subaccount
+    - [ ] /private/disable_api_key
+    - [ ] /private/disable_tfa_for_subaccount
+    - [ ] /private/enable_api_key
+    - [ ] /private/get_account_summary
+    - [ ] /private/get_email_language
+    - [ ] /private/get_new_announcements
+    - [ ] /private/get_position
+    - [ ] /private/get_positions
+    - [ ] /private/get_subaccounts
+    - [ ] /private/list_api_keys
+    - [ ] /private/remove_api_key
+    - [ ] /private/reset_api_key
+    - [ ] /private/set_announcement_as_read
+    - [ ] /private/set_api_key_as_default
+    - [ ] /private/set_email_for_subaccount
+    - [ ] /private/set_email_language
+    - [ ] /private/set_password_for_subaccount
+    - [ ] /private/toggle_notifications_from_subaccount
+    - [ ] /private/toggle_subaccount_login
+- Block Trading
+    - [ ] /private/execute_block_trade
+    - [ ] /private/get_block_trade
+    - [ ] /private/get_last_block_trades_by_currency
+    - [ ] /private/invalidate_block_trade_signature
+    - [ ] /private/verify_block_trade
+- Trading
+    - [ ] /private/buy
+    - [ ] /private/sell
+    - [ ] /private/edit
+    - [ ] /private/cancel
+    - [ ] /private/cancel_all
+    - [ ] /private/cancel_all_by_currency
+    - [ ] /private/cancel_all_by_instrument
+    - [ ] /private/cancel_by_label
+    - [ ] /private/close_position
+    - [ ] /private/get_margins
+    - [ ] /private/get_open_orders_by_currency
+    - [ ] /private/get_open_orders_by_instrument
+    - [ ] /private/get_order_history_by_currency
+    - [ ] /private/get_order_history_by_instrument
+    - [ ] /private/get_order_margin_by_ids
+    - [ ] /private/get_order_state
+    - [ ] /private/get_stop_order_history
+    - [ ] /private/get_user_trades_by_currency
+    - [ ] /private/get_user_trades_by_currency_and_time
+    - [ ] /private/get_user_trades_by_instrument
+    - [ ] /private/get_user_trades_by_instrument_and_time
+    - [ ] /private/get_user_trades_by_order
+    - [ ] /private/get_settlement_history_by_instrument
+    - [ ] /private/get_settlement_history_by_currency
+- Market Data
+    - [ ] /public/get_book_summary_by_currency
+    - [ ] /public/get_book_summary_by_instrument
+    - [ ] /public/get_contract_size
+    - [ ] /public/get_currencies
+    - [ ] /public/get_funding_chart_data
+    - [ ] /public/get_funding_rate_history
+    - [ ] /public/get_funding_rate_value
+    - [ ] /public/get_historical_volatility
+    - [ ] /public/get_index
+    - [ ] /public/get_instruments
+    - [ ] /public/get_last_settlements_by_currency
+    - [ ] /public/get_last_settlements_by_instrument
+    - [ ] /public/get_last_trades_by_currency
+    - [ ] /public/get_last_trades_by_currency_and_time
+    - [ ] /public/get_last_trades_by_instrument
+    - [ ] /public/get_last_trades_by_instrument_and_time
+    - [ ] /public/get_order_book
+    - [ ] /public/get_trade_volumes
+    - [ ] /public/get_tradingview_chart_data
+    - [ ] /public/ticker
+- Wallet
+    - [ ] /private/cancel_transfer_by_id
+    - [ ] /private/cancel_withdrawal
+    - [ ] /private/create_deposit_address
+    - [ ] /private/get_current_deposit_address
+    - [ ] /private/get_deposits
+    - [ ] /private/get_transfers
+    - [ ] /private/get_withdrawals
+    - [ ] /private/submit_transfer_to_subaccount
+    - [ ] /private/submit_transfer_to_user
+    - [ ] /private/withdraw
+- Subscriptions
+    - [ ] announcements
+    - [ ] book.{instrument_name}.{group}.{depth}.{interval}
+    - [ ] book.{instrument_name}.{interval}
+    - [ ] chart.trades.{instrument_name}.{resolution}
+    - [ ] deribit_price_index.{index_name}
+    - [ ] deribit_price_ranking.{index_name}
+    - [ ] estimated_expiration_price.{index_name}
+    - [ ] markprice.options.{index_name}
+    - [ ] perpetual.{instrument_name}.{interval}
+    - [ ] platform_state
+    - [ ] quote.{instrument_name}
+    - [ ] ticker.{instrument_name}.{interval}
+    - [ ] trades.{instrument_name}.{interval}
+    - [ ] trades.{kind}.{currency}.{interval}
+    - [ ] user.changes.{instrument_name}.{interval}
+    - [ ] user.changes.{kind}.{currency}.{interval}
+    - [ ] user.orders.{instrument_name}.{interval}
+    - [ ] user.orders.{kind}.{currency}.{interval}
+    - [ ] user.portfolio.{currency}
+    - [ ] user.trades.{instrument_name}.{interval}
+    - [ ] user.trades.{kind}.{currency}.{interval}
